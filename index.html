@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeeZ - SmartSafety: AI-Driven Hazard Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Use Inter as the base font */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #F8F9FA; /* Light gray background */
+        }
+
+        /* Custom accent color from the logo */
+        .accent-color {
+            color: #ffab40;
+        }
+        .bg-accent-color {
+            background-color: #ffab40;
+        }
+        .border-accent-color {
+            border-color: #ffab40;
+        }
+        
+        /* Custom primary text color */
+        .text-primary {
+            color: #0D1B2A;
+        }
+
+        /* Header scroll effect */
+        .header-scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Animation for elements sliding in on scroll */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .slide-in-bottom {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+        
+        /* Custom hero section graphic styling */
+        .hero-graphic {
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-graphic svg {
+             width: 60%;
+             height: auto;
+             opacity: 0.1;
+        }
+
+    </style>
+</head>
+<body class="text-primary">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo and Project Name -->
+            <a href="#home" class="flex items-center space-x-3">
+                <img src="Logo4.png" alt="HeeZ Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                <span class="text-primary text-2xl font-bold">HeeZ</span>
+            </a>
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-accent-color font-medium transition duration-300">Home</a>
+                <a href="#features" class="text-gray-700 hover:text-accent-color font-medium transition duration-300">Features</a>
+                <a href="#team" class="text-gray-700 hover:text-accent-color font-medium transition duration-300">Our Team</a>
+                <a href="#contact" class="text-gray-700 hover:text-accent-color font-medium transition duration-300">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+             <a href="#home" class="block text-primary text-center py-3 hover:bg-accent-color hover:text-white transition duration-300">Home</a>
+             <a href="#features" class="block text-primary text-center py-3 hover:bg-accent-color hover:text-white transition duration-300">Features</a>
+             <a href="#team" class="block text-primary text-center py-3 hover:bg-accent-color hover:text-white transition duration-300">Our Team</a>
+             <a href="#contact" class="block text-primary text-center py-3 hover:bg-accent-color hover:text-white transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section (Hero) -->
+        <section id="home" class="bg-white min-h-screen grid md:grid-cols-2 items-center pt-20">
+            <div class="container mx-auto px-6 md:px-12 text-center md:text-left">
+                <div class="slide-in-left">
+                    <span class="text-accent-color font-semibold">SmartSafety Project</span>
+                    <h1 class="text-4xl md:text-5xl font-extrabold my-4 leading-tight text-primary">
+                        AI-Driven Safety for the Modern Workplace.
+                    </h1>
+                    <p class="text-lg text-gray-600 max-w-xl mx-auto md:mx-0 mb-8">
+                        Our system provides intelligent, real-time monitoring of PPE, ergonomics, and environmental hazards to prevent accidents and protect your workforce.
+                    </p>
+                    <a href="#features" class="bg-accent-color text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-105 inline-block">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+            <div class="hero-graphic h-full hidden md:flex">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.602-.378-3.11-.997-4.425" />
+                 </svg>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 slide-in-bottom">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">How It Works</h2>
+                    <p class="max-w-2xl mx-auto text-gray-500">A multi-layered approach to ensure comprehensive safety.</p>
+                </div>
+                
+                <!-- Feature 1 -->
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                    <div class="slide-in-left">
+                        <div class="bg-accent-color/10 p-4 inline-block rounded-xl mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 accent-color" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">Automated PPE Detection</h3>
+                        <p class="text-gray-600 leading-relaxed">Our AI model scans live video feeds to ensure every worker is equipped with the necessary Personal Protective Equipment, from helmets to high-visibility vests, reducing compliance risks automatically.</p>
+                    </div>
+                    <div class="slide-in-right">
+                        <img src="https://placehold.co/600x400/e9ecef/333?text=PPE+Detection+Visual" alt="PPE Detection" class="rounded-lg shadow-xl w-full">
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                    <div class="slide-in-left order-last md:order-first">
+                         <img src="https://placehold.co/600x400/e9ecef/333?text=Ergonomics+Analysis+Visual" alt="Ergonomics Analysis" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="slide-in-right md:pl-10">
+                        <div class="bg-accent-color/10 p-4 inline-block rounded-xl mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 accent-color" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4a5 5 0 110 10 5 5 0 010-10z" /> <path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7m-4-2h8" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">Proactive Ergonomics Analysis</h3>
+                        <p class="text-gray-600 leading-relaxed">By analyzing body posture and movement, the system identifies potentially harmful actions or proximity to machinery, helping to prevent musculoskeletal injuries and other physical risks.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Team Section -->
+        <section id="team" class="py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <div class="slide-in-bottom mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">Meet the Innovators</h2>
+                    <p class="max-w-2xl mx-auto text-gray-500">The dedicated team behind the SmartSafety project.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Team Member 1 -->
+                    <div class="slide-in-bottom">
+                        <img src="Invens/Omar.jpg?text=OF" alt="Team Member 1" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                        <h4 class="text-xl font-bold text-primary">Omar Farouk</h4>
+                        <p class="text-accent-color">Front-end Devoloper</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="slide-in-bottom" style="transition-delay: 150ms;">
+                        <img src="Invens/Yasser.jpg?text=YS" alt="Team Member 2" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                        <h4 class="text-xl font-bold text-primary">Yasser Shaban</h4>
+                        <p class="text-accent-color">Backend Devoloper</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="slide-in-bottom" style="transition-delay: 300ms;">
+                        <img src="Invens/Maivy.jpg?text=MA" alt="Team Member 3" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                        <h4 class="text-xl font-bold text-primary">Maivy Ayman</h4>
+                        <p class="text-accent-color">Embedded System Specialist</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="slide-in-bottom" style="transition-delay: 300ms;">
+                        <img src="Invens/Tolba.jpg?text=AT" alt="Team Member 4" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                        <h4 class="text-xl font-bold text-primary">Abdo Tolba</h4>
+                        <p class="text-accent-color">AI Specialist</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="slide-in-bottom" style="transition-delay: 300ms;">
+                        <img src="Invens/Amr.jpg?text=AA" alt="Team Member 5" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                        <h4 class="text-xl font-bold text-primary">Amr Ashraf</h4>
+                        <p class="text-accent-color">AI Specialist</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="slide-in-bottom" style="transition-delay: 300ms;">
+                        <img src="https://placehold.co/300x300/e9ecef/333?text=HB" alt="Team Member 6" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                        <h4 class="text-xl font-bold text-primary">Haneen Badr</h4>
+                        <p class="text-accent-color">AI Specialist</p>
+                    </div>
+                    <div class="slide-in-bottom" style="transition-delay: 300ms;">
+                        
+                    </div>
+                    <div class="slide-in-bottom" style="transition-delay: 300ms;">
+                        <img src="https://placehold.co/300x300/e9ecef/333?text=AH" alt="Supervisor" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                        <h4 class="text-xl font-bold text-primary">Dr.Abdalla Hassan</h4>
+                        <p class="text-accent-color">Supervisor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="py-24">
+            <div class="container mx-auto px-6 text-center">
+                <div class="slide-in-bottom">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">Have a Question?</h2>
+                    <p class="max-w-2xl mx-auto text-gray-500 mb-10">We are here to help and eager to hear from you. Reach out to us directly.</p>
+                    <a href="mailto:ofarouk837@gmail.com" class="bg-accent-color text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-105 inline-block">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white text-primary pt-12 pb-8 border-t">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <!-- Project Info -->
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center justify-center md:justify-start space-x-3 mb-2">
+                        <img src="Logo4.png" alt="HeeZe Logo" class="h-8 w-auto" onerror="this.style.display='none'">
+                        <span class="text-xl font-bold">HeeZ</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">&copy; 2025 HeeZ Graduation Project. All Rights Reserved.</p>
+                </div>
+                <!-- Clock -->
+                <div class="text-center">
+                    <h4 class="font-semibold text-sm text-gray-500 mb-1">CURRENT TIME</h4>
+                    <div id="clock" class="text-2xl font-semibold accent-color"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.getElementById('header');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Toggle mobile menu
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Header color change on scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                    header.querySelector('span').classList.remove('text-primary');
+                    header.querySelector('span').classList.add('text-primary');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // Clock functionality
+            function updateClock() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            }
+            setInterval(updateClock, 1000);
+            updateClock();
+
+            // Slide-in animation on scroll
+            const sliders = document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-bottom');
+            const appearOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            sliders.forEach(slider => {
+                appearOnScroll.observe(slider);
+            });
+        });
+    </script>
+</body>
+</html>
